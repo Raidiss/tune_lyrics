@@ -1,5 +1,5 @@
 {
-  "name": "favorite_tune",
+  "name": "tune_lyrics",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
