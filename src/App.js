@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Titles from './components/Titles';
+import Form from './components/Form';
+import List from './components/List';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+const API_KEY = "8faaf6b05b95bc467825607f43facf8f";
+
+class App extends React.Component {
+  state = {
+    track: []
+  }
+
+  getSong = async (e) => {
+    e.preventDefault();
+    const song = e.target.elements.song.value;
+    const api_call = await fetch(`http://ws.audioscrobbler.com/2.0/?method=track.search&track=${song}&api_key=${API_KEY}&format=json`);
+    const data = await api_call.json();
+    console.log(this.state);
+    this.setState(data.results.trackmatches)
+  }
+
+  render () {
+    return ( 
+    
+    <div>
+      <Titles></Titles>
+      <Form getSong={this.getSong}></Form>
+      <List songs={this.state.track}></List>
     </div>
-  );
-}
+    
+    );
+    }
+  }
+
+
 
 export default App;
