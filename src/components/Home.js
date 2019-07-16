@@ -10,6 +10,19 @@ class Home extends React.Component {
     track: []
   }
 
+  componentDidMount = () => {
+    const json = localStorage.getItem("track");
+    const track = JSON.parse(json);
+    if (track) {
+      this.setState({ track: track })
+    }
+  }
+
+  componentDidUpdate = () => {
+    const track = JSON.stringify(this.state.track)
+    localStorage.setItem("track", track)
+  }
+
   getSong = async (e) => {
     e.preventDefault();
     const song = e.target.elements.song.value;
