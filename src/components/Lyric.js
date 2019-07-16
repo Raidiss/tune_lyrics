@@ -1,4 +1,5 @@
 import React from 'react';
+import { Markup } from 'interweave';
 
 class Lyric extends React.Component  {
     constructor (props) {
@@ -32,9 +33,8 @@ class Lyric extends React.Component  {
             <div>
                 <h1>{this.state.title}</h1>
                 <h4>{this.state.artist}</h4>
-                <p>
-                    {this.state.lyrics}
-                </p>
+                <hr />
+                <Markup content={this.state.lyrics} />
             </div>
         );
     }
