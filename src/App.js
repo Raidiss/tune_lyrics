@@ -1,5 +1,5 @@
 import React from 'react';
-import Titles from './components/Titles';
+import Title from './components/Title';
 import Navigation from './components/Navigation';
 import Main from './components/Main';
 import './App.css';
@@ -9,7 +9,7 @@ class App extends React.Component {
     return ( 
     
     <div className= 'app'>
-      <Titles />
+      <Title />
       <Navigation />
       <Main />
     </div>

@@ -6,8 +6,8 @@ class List extends React.Component {
    render() {
        return ( 
          <div> 
-            {this.props.songs.map(song => (
-               <Song song={song}/>
+            {this.props.songs.map((song, index) => (
+               <Song key={index} song={song}/>
             ))}
          </ div>
       ); 
