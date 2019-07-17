@@ -6,14 +6,12 @@ import './App.css';
 
 class App extends React.Component {
   render () {
-    return ( 
-    
+    return (
+
     <div className= 'app'>
-      <Title />
-      <Navigation />
       <Main />
     </div>
-    
+
     );
     }
   }
