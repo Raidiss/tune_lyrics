@@ -11,6 +11,7 @@ class Lyric extends React.Component  {
             lyrics: ''
         }
     }
+    
     componentDidMount () {
         this.getLyric();
     }
